@@ -89,7 +89,7 @@ public class Rubrica {
 	}
 	
 	
-	/* -.-.-.-.-.- Getter and Setter Methods -.-.-.-.-.- */
+/* -.-.-.-.-.- Getter and Setter Methods -.-.-.-.-.- */
 	public int getBookSize() {
 		return voci.size();
 	}

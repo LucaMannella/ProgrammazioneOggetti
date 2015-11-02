@@ -50,7 +50,7 @@ public class Voce implements Comparable<Voce>{
 		return toRet;
 	}
 
-	/* -.-.-.-.-.- Setters Methods -.-.-.-.-.- */
+/* -.-.-.-.-.- Setters Methods -.-.-.-.-.- */
 	public String getName() {
 		return name;
 	}
