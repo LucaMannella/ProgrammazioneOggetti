@@ -33,7 +33,7 @@ public class Principale {
 		String primaVoce = r.primo();
 		System.out.println("primo() --> " + primaVoce);
 		String ultimaVoce = r.ultimo();
-		System.out.println("ultimo() --> " + ultimaVoce);
+		System.out.println("ultimo() --> "+ultimaVoce+"\n");
 		
 		// Per accedere ad un elemento qualsiasi nella rubrica si utilizza 
 		// il metodo voce() che riceve come parametro il numero d'ordine della voce 
@@ -41,11 +41,12 @@ public class Principale {
 		int N = r.getBookSize();
 		for(int i=1; i<(N+1); i++)
 			System.out.println("voce("+i+") --> " + r.voce(i));
+		System.out.println();
 		
 		// Il metodo elenco() restituisce una stringa con 
 		// l'elenco delle voci della rubrica separate da ", "; 
 		// l'elenco inizia con "(" e termina con ")".
-		System.out.println("Elenco: " + r.elenco());
+		System.out.println("Elenco: " + r.elenco() + "\n");
 		
 		// il metodo ricerca() restituisce la stringa 
 		// corrispondente alla prima voce che contiene il 
@@ -54,6 +55,10 @@ public class Principale {
 		String result = r.ricerca(toFind);
 		if(result == null)
 			result = "...No result was found...";
-		System.out.println("Ricerca '"+toFind+"': " + result);
+		System.out.println("Ricerca '"+toFind+"': "+result+"\n");
+		
+		//provo il metodo toString() della rubrica
+		System.out.println(r);
 	}
+	
 }

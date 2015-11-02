@@ -48,22 +48,7 @@ public class Rubrica {
 		catch(Exception e1) {
 			System.err.println("Unaspected exception!");
 			return null;
-		}
-		
-	}
-	
-	/** This method return the entire contents of the phonebook and its syntax is:<br>
-	 * (<i>name surname cell,<br>
-	 * <i>name surname cell,<br>
-	* <i>name surname cell)**/
-	public String elenco() {
-		String toRet = "(";
-		int i=0;
-		for (i=0; i < voci.size()-1; i++) {
-			toRet += voci.get(i).toString()+",\n";
-		}
-		toRet += voci.get(i).toString()+")";
-		return toRet;
+		}		
 	}
 	
 	/** This method look for the specified string inside all names, surnames and cell numbers.
@@ -82,7 +67,26 @@ public class Rubrica {
 		return null;
 	}
 
-/* -.-.-.-.-.- Getter and Setter Methods -.-.-.-.-.- */
+	/** This method return the entire contents of the phonebook and its syntax is:<br>
+	 * (<i>name surname cell,<br>
+	 * <i>name surname cell,<br>
+	* <i>name surname cell)**/
+	public String elenco() {
+		String toRet = "(";
+		int i=0;
+		for (i=0; i < voci.size()-1; i++) {
+			toRet += voci.get(i).toString()+",\n";
+		}
+		toRet += voci.get(i).toString()+")";
+		return toRet;
+	}
+	
+	public String toString() {
+		return "Phonebook's name: "+name+"\nList of elements:\n"+elenco()+"\n";
+	}
+	
+	
+	/* -.-.-.-.-.- Getter and Setter Methods -.-.-.-.-.- */
 	public int getBookSize() {
 		return voci.size();
 	}
