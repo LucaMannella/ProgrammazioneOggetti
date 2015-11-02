@@ -1,6 +1,8 @@
 package rubrica;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Rubrica {
@@ -72,8 +74,10 @@ public class Rubrica {
 	 * <i>name surname cell,<br>
 	* <i>name surname cell)**/
 	public String elenco() {
-		String toRet = "(";
 		int i=0;
+		String toRet = "(";
+		Collections.sort(voci);		//re-ordering after printing
+
 		for (i=0; i < voci.size()-1; i++) {
 			toRet += voci.get(i).toString()+",\n";
 		}
