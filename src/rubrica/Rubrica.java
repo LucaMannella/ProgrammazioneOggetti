@@ -15,9 +15,10 @@ public class Rubrica {
 	}
 	
 	/** This method add a new element inside the phonebook **/
-	public boolean aggiungi(String nome, String cognome, String cell) {
+	public void aggiungi(String nome, String cognome, String cell) {
 		Voce v = new Voce(nome,cognome,cell);
-		return voci.add(v);
+		voci.add(v);
+		return;
 	}
 	
 	/** This method returns the first element of the phonebook in String form. **/
@@ -95,6 +96,9 @@ public class Rubrica {
 	}
 	
 	public String getNome() {
+		return name;
+	}
+	public String getTitolo() {
 		return name;
 	}
 	
