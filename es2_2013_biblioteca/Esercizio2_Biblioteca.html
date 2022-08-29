@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Gestione biblioteca</title>
+</head>
+<body>
+<h1 style="text-align: center;">Biblioteca</h1>
+Realizzare un sistema per la gestione di una biblioteca.<br>
+Si usino come punto di partenza le classi <code><span
+ style="font-weight: bold;">Libro</span></code>, <code><span
+ style="font-weight: bold;">Biblioteca</span></code> e <code><span
+ style="font-weight: bold;">GestioneBiblio</span></code> presenti nel
+package <code><span style="font-weight: bold;">biblio</span></code>.<br>
+Il sistema deve soddisfare i seguenti requisiti.<br>
+<h2>R1: Dati del Libro</h2>
+Quando si deve creare un oggetto <code><span style="font-weight: bold;">Libro</span></code>
+si forniscono le informazioni
+relative al libro: il titolo e l&#8217;autore.<br>
+Le due informazioni sono reperibile tramite metodi <span
+ style="font-style: italic;">getter</span>.<br>
+La rappresentazione stringa di un libro, ottenuta tramite il metodo <code
+ style="font-weight: bold;">toString()</code>, &egrave; costituita da
+autore e titolo separati da una virgola e uno spazio (<code>", "</code>)<br>
+<h2>R2: Inserimento libro nella biblioteca<br>
+</h2>
+Il contenitore di libri sui cui eseguire tutte le operazionei &egrave; <code><span
+ style="font-weight: bold;">Biblioteca</span></code>.<br>
+Deve essere possibile inserire un libro in una determinata posizione
+della biblioteca.<br>
+La biblioteca &egrave; organizzata in piani, ce ne sono 3. Ogni piano
+contiene 30 scaffali. Ogni scaffale &egrave; composto da 6 ripiani ed
+&egrave; caratterizzato da un codice alfanumerico del tipo <span
+ style="font-style: italic;">SC1</span>. Ogni ripiano contiene fino a
+10 libri.<br>
+E' possibilie verificare se un ripiano (di un dato scaffale, ad un
+certo piano) contiene un libro con il metodo <code><span
+ style="font-weight: bold;">contiente()</span></code> che ha come
+parametri: il piano, lo scaffale e il ripiano.<br>
+<h2>R3: Stampa contenuto scaffale</h2>
+Dato il nome di uno scaffale (all'interno di un dato piano) deve essere
+possibile
+elencarei libri contenuti, suddivisi per ripiani. <br>
+L'elenco viene restituito sotto forma di stringa dal metodo <code><span
+ style="font-weight: bold;">getLibri() </span></code>che ha come
+parametri il piano e lo scaffale.<br>
+Per ogni ripiano nella stringa compare l'indicazione del ripiano nella
+forma <code style="font-weight: bold;">"Ripiano 1"</code> seguito,
+nelle righe successive dai libri contenuti nel ripiano.<br>
+<h2>R4: Stampa posizione libro</h2>
+Dato un libro deve essere possibile risalire alla sua collocazione. In
+particolare &egrave; possibile sapere il piano, scaffale e ripiano,
+rispettivamente tramite i metodi <code><span style="font-weight: bold;">getPiano(),
+getScaffale()</span></code> e&nbsp; <code><span
+ style="font-weight: bold;">getRipiano() </span></code>della classe <code><span
+ style="font-weight: bold;">Libro</span></code>.<br>
+<h2>R5: Ricerca di un libro</h2>
+Deve essere possibile riercare un libro all'interno della biblioteca
+specificando autore e titolo. Il metodo per eseguire cio &egrave; <code><span
+ style="font-weight: bold;">cerca()</span></code>.<br>
+<h2>R6: Interfaccia utente</h2>
+L'intefaccia utente deve essere implementata dalla classe
+<code><span style="font-weight: bold;">GestioneBiblio</span></code>,
+che deve essere costruita passando come parametro un
+oggetto <code><span style="font-weight: bold;">Biblioteca</span> </code>che
+&egrave; destinato a contenere i dati.<br>
+Per avviare l'interfaccia utente si usi il metodo <code><span
+ style="font-weight: bold;">start()</span></code>.<br>
+Il sistema deve visualizzare un prompt della forma "<code><span
+ style="font-weight: bold;">&gt;</span></code>" ed accettare
+i seguenti comandi che devono eseguire le relative operazioni
+sull'oggetto <code><span style="font-weight: bold;">Biblioteca</span></code>:<br>
+<ul>
+  <li>Comando "add": inserimento libro, seguito dai parametri autore,
+titolo, piano, scaffale e ripiano.<br>
+  </li>
+  <li>Comando "list": stampa contenuto scaffale, seguito dai parametri
+piano e scaffale.<br>
+  </li>
+  <li>Comando "libro": ricerca un libro e stampa la posizione: seguito
+dai parametri autore e titolo.</li>
+  <li>Comando "quit": termina l'esecuzione dell'interfaccia (tramite
+return, NON usando exit()).<br>
+  </li>
+</ul>
+I parametri vengono richiesti uno per volta dall'intefaccia utente dopo
+che &egrave; stato inserito il comando.<br>
+<hr style="width: 100%; height: 2px;"><br>
+</body>
+</html>

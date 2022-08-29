@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Idraulica</title>
+</head>
+<body>
+<h1 style="text-align: center;">Idraulica</h1>
+Realizzare il sistema software per la descrizione e la simulazione di
+un sistema idraulico.<br>
+Tutte le classi si trovano nel package <span style="font-weight: bold;">idraulica</span>.<br>
+<hr style="width: 100%; height: 2px;">
+
+<h2>R1: Elementi e Tubi<br>
+</h2>
+Un sistema idraulico &egrave; composto da elementi (di vario tipo)
+connessi tra loro da tubi. Un sistema &egrave; rappresentato da un
+oggetto di classe <span style="font-weight: bold;">Sistema</span> che
+offre i metodo <span style="font-weight: bold;">aggiungiElemento()</span>
+che riceve come parametro un oggetto di classe <span
+ style="font-weight: bold;">Elemento</span> e lo aggiunge alla lista
+interna. Tramite il metodo <span style="font-weight: bold;">getElementi()</span>
+&egrave; possibile ottenere un array contenente gli elementi, questo
+metodo restituisce un array di oggetti Elemento.<br>
+<br>
+<span style="font-style: italic;">Suggerimento: data una List &egrave;
+possibile generare un array contenente gli elementi tramite il metodo
+toArray() che riceve come parametro un array vuoto di dimensioni
+opportune.<br>
+Es:<br>
+&nbsp;&nbsp;&nbsp; <code>Elemento[] risultato =
+(Elemento[])lista.toArray(new
+Elemento[lista.size()])</code></span><br>
+
+<h2>R2: Elementi semplici<br>
+</h2>
+I tipi di elementi semplici sono: <span style="font-weight: bold;">Sorgente</span>,
+<span style="font-weight: bold;">Rubinetto</span>, <span
+ style="font-weight: bold;">Scarico </span>che sono rappresentati
+dalle classi omonime.<br>
+Tutti gli elementi hanno un nome che pu&ograve; essere letto tramite il
+metodo <span style="font-weight: bold;">getNome()</span>.<br>
+&Egrave; possibile connettere l'uscita di un elemento all'ingresso di un
+altro tramite il metodo <span style="font-weight: bold;">connetti()</span>
+che riceve come parametro l'elemento al cui ingresso deve essere
+connesso l'elemento sui cui &egrave; invocato: a.connetti(b); connette
+l'uscita di a all'ingresso di b. Il metodo connetti() invocato su
+Scarico non ha nessun effetto e stampa un messaggio d'errore.<br>
+Dato un elemento &egrave; possibile sapere a quale elemento &egrave;
+connesso in uscita tramite il metodo <span style="font-weight: bold;">getUscita()</span>
+che resituisce un oggetto di tipo Elemento.<br>
+
+<h2>R3: Elementi complessi<br>
+</h2>
+Oltre agli elementi semplici di cui sopra ci sono degli elementi
+complessi. L'elemento a T rappresentato dalla classe <span
+ style="font-weight: bold;">Split</span> permette di suddivide l'input
+in due flussi in uscita. In tale caso il metodo <span
+ style="font-weight: bold;">connetti()</span> riceve un ulteriore
+parametro intero che indica l'uscita a cui connettere l'elemento. Tale
+intero ha valore 0 per la prima uscita e 1 per la seconda. Per sapere
+quali elementi sono connessi in uscita &egrave; possibile utilizzare il
+metodo <span style="font-weight: bold;">getUscite()</span> che
+restituisce un array di elementi.<br>
+Il caso pi&ugrave; generale di elemento a T &egrave; il ripartitore 
+ad n uscite che &egrave; rappresentato dalla
+classe <span style="font-weight: bold;">Ripartitore</span>; il
+costruttore di questa classe riceve come parametro il numero di uscite.
+In questo caso il metodo <span style="font-weight: bold;">getNumeroUscite()</span>
+restituisce il numero di uscite del ripartitore.<br>
+
+
+<h2>R4: Simulazione</h2>
+Dato un sistema corretto, ovvero un albero che ha come radice una sorgente
+ed in cui ogni percorso termina con uno scarico, &egrave; 
+possibile fare un calcolo delle portate e di come vengono ripartite.<br>
+&Egrave; possibile definire la portate per una sorgente con il metodo <span
+ style="font-weight: bold;">setPortata()</span> che riceve come
+parametro un numero floating point che rappresenta i metri cubi al
+secondo.<br>
+Per i rubinetti &egrave; possibile impostare la loro apertura tramite
+il metodo <span style="font-weight: bold;">setOpen()</span> che riceve
+come parametro un boolean. Se un rubinetto &egrave; aperto la porta
+all'ingresso &egrave; uguale a quell all'uscita.<br>
+Per i raccordi a T la portata in ingresso viene ripartita equamente tra
+le due uscite.<br>
+Per i ripartitori &egrave; possibile indicare la ripartizione tramite
+il metodo <span style="font-weight: bold;">setProporzioni() </span>che
+riceve un array di floating point che definiscono le proporzioni con
+cui viene ripartito il flusso in entrata sulle uscite. La dimension
+dell'array deve essere parti al numero di uscite.<br>
+Il metodo <span style="font-weight: bold;">simula()</span> della
+classe Sistema, effettua i calcoli di portata a partire da ogni
+sorgente e stampa per ogni elemento connesso a valle le portate in
+ingresso e in uscita (per lo scarico solo quella in ingresso).<br>
+<br>
+<span style="font-style: italic;">Suggerimento: dato un oggetto, per
+sapere se &egrave; un'istanza di una classe si pu&ograve; usare
+l'operatore instanceof. </span><br style="font-style: italic;">
+<span style="font-style: italic;">Es. </span><br
+ style="font-style: italic;">
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp; </span><code
+ style="font-style: italic;">if(elemento instanceof Sorgente)</code><br
+ style="font-style: italic;">
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+</body>
+</html>
